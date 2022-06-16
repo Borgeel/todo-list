@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+// Components
+import Todos from "./components/Todos";
 
 function App() {
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      title: "Nauci Zanu React",
+    },
+    {
+      id: 2,
+      title: "Nauci Zanu zivotu",
+    },
+    {
+      id: 3,
+      title: "Nauci Zanu kuhati",
+    },
+  ]);
+
+  // Delete Todo
+  const deleteHandler = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Todos</h1>
+      <Todos todos={todos} onDelete={deleteHandler} />
     </div>
   );
 }
