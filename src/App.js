@@ -7,15 +7,15 @@ function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
-      title: "Nauci Zanu React",
+      title: "Learn React",
     },
     {
       id: 2,
-      title: "Nauci Zanu zivotu",
+      title: "Learn JavaScript",
     },
     {
       id: 3,
-      title: "Nauci Zanu kuhati",
+      title: "Get a deeper knowledge",
     },
   ]);
 
